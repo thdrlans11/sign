@@ -63,6 +63,18 @@ return [
             ]) : [],
         ],
 
+        'wiseu' => [
+            'driver' => 'sqlsrv',
+            'host' => env('DB_HOST_WISEU', '121.254.129.73'),
+            'port' => env('DB_PORT_WISEU', '1433'),
+            'version' => env('DB_VERSION_WISEU', '8.0'),
+            'database' => env('DB_DATABASE_WISEU', 'wiseU'),
+            'username' => env('DB_USERNAME_WISEU', 'wiseu'),
+            'password' => env('DB_PASSWORD_WISEU', ''),
+            'charset' => 'UTF-8',
+            'prefix' => '',
+        ],
+
         'pgsql' => [
             'driver' => 'pgsql',
             'url' => env('DATABASE_URL'),
