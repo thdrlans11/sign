@@ -3,67 +3,49 @@
 - ENV
 
     APP_NAME=DEFAULT #변경 필요
+
     APP_ENV=local #app/Providers/appServiceProvider.php 아이피걸어 별도 설정
+
     APP_KEY=base64:sypmAyavsGXL9cwlUileBrwAA9QYvkgTuEqkovfXIRc=
+
     APP_DEBUG=false #app/Providers/appServiceProvider.php 아이피걸어 별도 설정 
+
     APP_URL=http://node.m2comm.co.kr #변경 필요
 
     LOG_CHANNEL=daily
+
     LOG_DEPRECATIONS_CHANNEL=null
+
     LOG_LEVEL=debug
 
     DB_CONNECTION=mysql
+
     DB_HOST=127.0.0.1
+
     DB_PORT=3306
+
     DB_DATABASE=laravel #변경 필요
+
     DB_USERNAME=root #변경 필요
+
     DB_PASSWORD= #변경 필요
 
     #WISEU
+    
     DB_HOST_WISEU=121.254.129.73
+
     DB_PORT_WISEU=1433
+
     DB_VERSION_WISEU=8.0
+
     DB_DATABASE_WISEU=wiseU
+
     DB_USERNAME_WISEU=wiseu
+
     DB_PASSWORD_WISEU=wiseu
 
-    BROADCAST_DRIVER=log
-    CACHE_DRIVER=file
-    FILESYSTEM_DRIVER=local
-    QUEUE_CONNECTION=sync
-    SESSION_DRIVER=file
-    SESSION_LIFETIME=120
-
-    MEMCACHED_HOST=127.0.0.1
-
-    REDIS_HOST=127.0.0.1
-    REDIS_PASSWORD=null
-    REDIS_PORT=6379
-
-    MAIL_MAILER=smtp
-    MAIL_HOST=mailhog
-    MAIL_PORT=1025
-    MAIL_USERNAME=null
-    MAIL_PASSWORD=null
-    MAIL_ENCRYPTION=null
-    MAIL_FROM_ADDRESS=null
-    MAIL_FROM_NAME="${APP_NAME}"
-
-    AWS_ACCESS_KEY_ID=
-    AWS_SECRET_ACCESS_KEY=
-    AWS_DEFAULT_REGION=us-east-1
-    AWS_BUCKET=
-    AWS_USE_PATH_STYLE_ENDPOINT=false
-
-    PUSHER_APP_ID=
-    PUSHER_APP_KEY=
-    PUSHER_APP_SECRET=
-    PUSHER_APP_CLUSTER=mt1
-
-    MIX_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
-    MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
-
     MASTER_PASSWORD = "master123!@#" #별도 변경
+
     ECARE_NUMBER = "" #별도 변경
 
 - ENV
