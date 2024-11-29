@@ -16,10 +16,10 @@ class AdminCheck
      */
     public function handle(Request $request, Closure $next)
     {
-        if( !auth('admin')->check() ){
-            session()->flash('previous_url', $request->fullUrl());
-            return redirect('/member/login?referer=true');
-        }
+        // if( !auth('admin')->check() ){
+        //     session()->flash('previous_url', $request->fullUrl());
+        //     return redirect('/member/login?referer=true');
+        // }
 
         return $next($request);
     }

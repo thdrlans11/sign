@@ -20,8 +20,8 @@
 <link type="text/css" rel="stylesheet" href="/devScript/colorbox/example3/colorbox.css" />
 @stack('css')
 
-<script type="text/javascript" src="/devAdmin/jquery-1.12.4.min.js"></script>
-<script type="text/javascript" src="/devAdmin/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/devAdmin/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/devAdmin/js/jquery-ui.min.js"></script>
 <script type="text/javascript" src="/devAdmin/js/admin.js"></script>
 <script type="text/javascript" src="/devScript/common.js"></script>
 <script type="text/javascript" src="/devScript/colorbox/jquery.colorbox-min.js"></script>
@@ -38,7 +38,7 @@
                 </h1>
                 <div class="util-menu-wrap">
                     <p class="user-info">
-                    	 접속 계정 : {{ auth('admin')->user()->id }}
+                    	 접속 계정 : {{ auth('admin')->user()->id ?? '' }}
                     </p>
                     <ul class="util-menu">
                         <li><a href="/" target="_blank" class="btn btn-util color-type4">Main</a></li>
@@ -47,7 +47,7 @@
                     </ul>
                 </div>
             </div>
-            <nav id="gnb" class="wide">
+            {{-- <nav id="gnb" class="wide">
                 <div class="gnb-wrap inner-layer wide">
                     <ul class="gnb">
                     	@foreach( config('site.menu.admin_menu') as $key => $val )
@@ -55,7 +55,7 @@
                         @endforeach
                     </ul>
                 </div>
-            </nav>
+            </nav> --}}
         </header>
 
         <section id="container" class="inner-layer wide">
@@ -73,7 +73,7 @@
     
         <footer id="footer" class="wide">
             <button type="button" class="btn-top js-btn-top">
-                <img src="/devAdmin/assets/image/common/ic_top.png" alt="">
+                <img src="/devAdmin/image/common/ic_top.png" alt="">
                 TOP
             </button>
             <div class="footer-wrap inner-layer wide">
