@@ -203,7 +203,7 @@
 								<div class="radio-wrap">
 									@foreach( config('site.board')['select']['hide'] as $key => $val )
 									<label for="hide{{ $key }}" class="radio-group">
-										<input type="radio" name="hide" id="hide{{ $key }}" {{ ( $data['hide'] ?? '' ) == $key ? 'checked' : '' }}>{{ $val }}
+										<input type="radio" name="hide" id="hide{{ $key }}" value="{{ $key }}" {{ ( $data['hide'] ?? '' ) == $key ? 'checked' : '' }}>{{ $val }}
 									</label>
 									@endforeach
 								</div>
