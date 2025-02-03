@@ -40,7 +40,7 @@ class dbService
         DB::commit();
 
         QueryLog::create([
-            'u_sid' => auth('web')->user()->sid,
+            'u_sid' => auth('admin')->check() ? auth('admin')->user()->sid : ( auth('client')->check() ? 'client_'.auth('client')->user()->sid : 'app' ),
             'subject' => $subject,
             'query' => $this->getQuery(),
             'ip' => request()->ip(),
@@ -61,7 +61,7 @@ class dbService
         ];
 
         QueryLog::create([
-            'u_sid' => auth('web')->user()->sid,
+            'u_sid' => auth('admin')->check() ? auth('admin')->user()->sid : ( auth('client')->check() ? 'client_'.auth('client')->user()->sid : 'app' ),
             'subject' => 'DB RollBack',
             'content' => $errorInfo,
             'query' => $this->getQuery(),
@@ -70,8 +70,23 @@ class dbService
 
         if( $mode == 'ajax' ){
             return 'error';
+        }else if( $mode == 'api' ){
+            return $this->apiResponse(300, [ 'message' => 'dbError', 'data' => null] );
         }else{
             return redirect()->back()->with('alert','시스템 오류가 있습니다. 관리자에 문의해주세요.');
         }
+    }
+
+    protected function apiResponse($code, $data = [])
+    {
+        $response = [
+            'code' => $code,
+        ];
+
+        if (!empty($data)) {
+            $response = array_merge($response, $data);
+        }
+        
+        return response()->json($response);
     }
 }

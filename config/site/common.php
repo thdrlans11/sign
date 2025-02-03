@@ -1,4 +1,4 @@
-<?
+<?php
 return [
 
     // ================= api =================
@@ -17,8 +17,8 @@ return [
     ],
 
     'info' => [                
-        'siteName' => 'Default',
-        'name' => 'Default',
+        'siteName' => '전자서명 관리시스템',
+        'name' => '전자서명 관리시스템',
         'email' => 'Default@Default.co.kr',
         'url' => env('APP_URL'),
         'ecareNum' => env('ECARE_NUMBER'),
@@ -33,5 +33,10 @@ return [
         '5' => '금',
         '6' => '토'
     ],
+
+    'selectYn' => [
+        'Y' => 'Y',
+        'N' => 'N'
+    ]
 ]
 ?>

@@ -6,7 +6,8 @@ $(function (e) {
 		btnTop();
         wideLayout();
         toggleCon();
-
+		fileUpload();
+		
 		if(wWidth < 1025){		
 		}else{		
 		}
@@ -105,5 +106,15 @@ function toggleCon(){
             $(this).addClass('on').text('통계현황 닫기');
             $(this).parent().next('.js-toggle-con').stop().slideToggle();
         }
+    });
+}
+
+function fileUpload(option=null){
+    $('.file-upload').each(function(e){
+        $(this).parent().find('.upload-name').attr('readonly','readonly');
+        $(this).on('change',function(){
+            var fileName = $(this).val();
+            $(this).parent().find('.upload-name').val(fileName);
+        });
     });
 }

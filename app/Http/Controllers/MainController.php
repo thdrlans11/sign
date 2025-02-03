@@ -21,8 +21,12 @@ class MainController extends Controller
 
     public function main()
     {   
+        if( auth('admin')->check() ){
+            return redirect()->route('event.list');
+        }else if( auth('client')->check() ){
+            return redirect()->route('roster.list', ['code'=>auth('client')->user()->code]);
+        }
         return view('main');
-        //return view('main')->with( $this->MainService->data() );
     }
 
     public function popup(Request $request)

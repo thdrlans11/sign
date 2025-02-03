@@ -18,7 +18,7 @@ class AdminCheck
     {
         if( !auth('admin')->check() ){
             session()->flash('previous_url', $request->fullUrl());
-            return redirect('/member/login?referer=true');
+            return redirect('/?referer=true');
         }
 
         return $next($request);

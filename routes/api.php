@@ -14,6 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+// 로그인
+Route::prefix('auth')->controller(\App\Http\Controllers\Api\AuthController::class)->group(function() {    
+    Route::post('/', 'auth')->name('api.auth');
+    Route::post('/logout', 'logout')->middleware('authTokenCheck')->name('api.logout');
+});
+
+Route::middleware('authTokenCheck')->prefix('sign')->controller(\App\Http\Controllers\Api\SignController::class)->group(function() {
+    Route::post('/', 'list')->name('api.signList');
+    Route::post('/file', 'file')->name('api.signFile');
+    Route::post('/fileDel', 'fileDel')->name('api.signFileDel');
+    Route::post('/view', 'signView')->name('api.signView');
 });

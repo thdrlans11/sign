@@ -16,7 +16,7 @@ class Authenticate extends Middleware
     {
         if (! $request->expectsJson()) {
             session()->put('previous_url', $request->fullUrl());
-            return route('loginShow', ['referer' => true]);
+            return route('main', ['referer' => true]);
         }
     }
 }

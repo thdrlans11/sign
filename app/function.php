@@ -1,4 +1,4 @@
-<?
+<?php
 function isAdminCheck()
 {
     return auth('web')->check() ? ( auth('admin')->check() ? true : false ) : false;
